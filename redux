@@ -1,0 +1,101 @@
+// redux function takes a state as an argument and returns an argument
+// redux is one big state for whole app
+// action creator is a function that takes action and returns action
+
+
+const reducer = (state = 5) => {
+  return state;
+}
+
+// Redux methods are available from a Redux object
+// For example: Redux.createStore()
+// Define the store here:
+
+const store = Redux.createStore(reducer)
+
+const store = Redux.createStore(
+  (state = 5) => state
+);
+
+// Change code below this line
+
+const currentState = store.getState()
+
+// Define an action here:
+
+const action = {type : 'LOGIN'}
+
+const action = {
+  type: 'LOGIN'
+}
+// Define an action creator here:
+
+function actionCreator(action) {
+  return action;
+}
+
+const store = Redux.createStore(
+  (state = {login: false}) => state
+);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+// Dispatch the action here:
+
+store.dispatch(loginAction())
+
+const defaultState = {
+  login: false
+};
+
+const reducer = (state = defaultState, action) => {
+  // Change code below this line
+    return (action.type == 'LOGIN') ? {login:true} : state ;
+  // Change code above this line
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+  // Change code below this line
+    switch(action.type){
+      case 'LOGIN':{
+          return {authenticated: true};
+      }
+      case 'LOGOUT':
+          return {authenticated: false};
+        
+    default : return defaultState;
+    }
+
+    
+  // Change code above this line
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
+  }
+};
