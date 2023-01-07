@@ -8,13 +8,15 @@ function App() {
     console.log(quotes)
     return quotes;
   }
+
+  const quotes = getQuotes();
   
 
   //quotes[Math.random()*6
   return (
     <div id="quote-box"> 
-      {/* <div id="#text">{quotes[Math.floor(Math.random() * 6)]}</div> */}
-      {console.log(getQuotes())}
+      <div id="#text">{quotes[Math.floor(Math.random() * 6)]}</div>
+      {console.log(quotes.quotes)}
       <div id="#author">quote author</div>
       <div id="#new-quote"></div>
       <a href="twitter.com/intent/tweet" target="_blank" id="#tweet-quote">tweet</a>
