@@ -1,22 +1,33 @@
 import './App.css';
+import { useState } from 'react';
 
 function App() {
 
   const getQuotes = async () => {
     const quote = await fetch("https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json");
-    const quotes = quote.json();
-    console.log(quotes)
+    const quotesObject = await quote.json();
+    const quotes = await quotesObject.quotes
+    console.log(quotesObject)
     return quotes;
   }
 
-  const quotes = getQuotes();
+  const quotes = getQuotes()
+  console.log(quotes)
+
+  // async function c() {
+  //   var quotes = await getQuotes();
+  //   console.log(quotes) 
+  //   return quotes;
+  // }
+
   
+  const [quote , setQuote] = useState("quote"); //quotes[1]
 
   //quotes[Math.random()*6
   return (
     <div id="quote-box"> 
-      <div id="#text">{quotes[Math.floor(Math.random() * 6)]}</div>
-      {console.log(quotes.quotes)}
+      {/* <div id="#text">{quotes[Math.floor(Math.random() * 6)]}</div> */}
+      {/* {console.log(quotes[1])} */}
       <div id="#author">quote author</div>
       <div id="#new-quote"></div>
       <a href="twitter.com/intent/tweet" target="_blank" id="#tweet-quote">tweet</a>
