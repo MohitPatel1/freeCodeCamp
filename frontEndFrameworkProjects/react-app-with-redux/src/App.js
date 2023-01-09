@@ -2,17 +2,29 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
+  const quotes = []
+  const [quote , setQuote] = useState(quotes); //quotes[1]
 
   const getQuotes = async () => {
     const quote = await fetch("https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json");
     const quotesObject = await quote.json();
     const quotes = await quotesObject.quotes
-    console.log(quotesObject)
+    // console.log(quotes[50]);
     return quotes;
   }
 
-  const quotes = getQuotes()
-  console.log(quotes)
+  // const changeQuote = () => {
+  //   setQuote(quotes[Math.floor(Math.random() * 6)]);
+  // }
+  const callQuotes = async () => {
+    const quotes = await getQuotes()
+    console.log(quotes)
+    // setQuote(quotes[0])
+    return quotes
+  }
+  
+  callQuotes()
+  // console.log(quotes)
 
   // async function c() {
   //   var quotes = await getQuotes();
@@ -21,7 +33,6 @@ function App() {
   // }
 
   
-  const [quote , setQuote] = useState("quote"); //quotes[1]
 
   //quotes[Math.random()*6
   return (
