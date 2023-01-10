@@ -18,10 +18,11 @@ function App() {
     const quotes = JSON.parse(quoteString)
     // const [quote , setQuote] = useState(quotes[0]); //quotes[1]
     console.log(quotes[0])
+    console.log(quotes.length)
   
   return (
     <div id="quote-box"> 
-      {/* <div id="#text">{quotes[Math.floor(Math.random() * 6)]}</div> */}
+      <div id="#text" class="bg-red-700">{quotes[Math.floor(Math.random() * quotes.length)].quote}</div>
       {/* {console.log(quotes[1])} */}
       <div id="#author">quote author</div>
       <div id="#new-quote"></div>
