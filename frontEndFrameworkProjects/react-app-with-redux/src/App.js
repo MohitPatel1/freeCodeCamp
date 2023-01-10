@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 
 function App() {
 // fetches quotes from API call and stores result to local storage
@@ -9,9 +9,14 @@ function App() {
     const quotes = await quotesObject.quotes
     const quoteString = JSON.stringify(quotes)
     localStorage.setItem("quotes",quoteString);
+    // console.log("getQUotes")
     return quotes;
   }
-  getQuotes();
+  
+  useEffect(() => {
+    getQuotes();
+  }, [])
+  
 
 // gets array from local storage and stores it in variable "quotes" 
   const quoteString = localStorage.getItem("quotes")
@@ -21,29 +26,35 @@ function App() {
   const randomNumber = Math.floor(Math.random() * quotes.length)
   
 // use state hook sets initial quote to random quote
+    let [quote , setQuote] = useState(quotes[randomNumber]);
 
-    let [quote , setQuote] = useState(quotes[randomNumber]); //quotes[1]
-    console.log(quotes.length)
-    console.log(quotes[randomNumber].quote)
-
-
+// function for changing quotes on click
     function newQuote () {
-      setQuote = quotes[randomNumber];
+      setQuote(quotes[randomNumber]);
     }
-  
+
+// url for tweet
+    let url =  `https://twitter.com/intent/tweet?text=${quote.quote} by ${quote.author}`
+    console.log(url)
+    
+// returning jsx   
   return (
     <main className='h-screen bg-blue-300'>
-      <div className="flex w-ful h-full justify-center items-center"> 
+      <div className="flex w-ful h-full justify-center items-center flex-col gap-6"> 
         <div id="quote-box" className="flex flex-col items-center gap-6 bg-white">
           <div id="#text" >{quote.quote}</div>
           {/* {console.log(quotes[1])} */}
           <div id="#author">{quote.author}</div>
-          <div id="#new-quote" onClick={newQuote}>New Quote</div>
-          <a href="twitter.com/intent/tweet" target="_blank" id="#tweet-quote">tweet</a>
-          </div>
+          <div id="#new-quote" className='cursor-pointer' onClick={newQuote}>New Quote</div>
+          <a href={url} target="_blank" id="#tweet-quote" rel='noreferrer'>tweet</a>
+        </div>
+        <h1>~ `by Mohit Patel</h1>
       </div>
     </main>
   );
 }
 
 export default App;
+
+
+// `https://twitter.com/intent/tweet?text={quote.quote +quote.author}`
