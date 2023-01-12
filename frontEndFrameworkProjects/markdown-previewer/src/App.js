@@ -1,34 +1,22 @@
 import React from "react";
 let marked = require("marked");
+console.log(typeof(marked))
 
 export default class App extends React.Component{
 
   constructor(props){
     super(props);
     this.state = {
-      markdown: "",
-      preview: ""
+      markdown: ""
     }
   }
 
-  
-
   updateMarkdownState = (markdown) => {
     this.setState({markdown: markdown})
-    this.updatePreview(markdown)
   }
-
-  updatePreview = (inputText) => {
-    console.log(inputText)
-    // let preview = marked(inputText)
-    this.setState({preview: marked(inputText)})
-  }
-  
   
   render(){
     
-    
-
     let textAreaStyles = {
       height :"50vh"
     }
@@ -41,7 +29,7 @@ export default class App extends React.Component{
           </div>
           <div className="flex">
             <textarea className="w-2/4 m-4 bg-green-300" value={this.state.markdown} onChange={(e) => {this.updateMarkdownState(e.target.value)}} style={textAreaStyles}>{console.log(this.state.markdown)}</textarea>
-            <div className="w-2/4 m-4 bg-blue-300" dangerouslySetInnerHTML={{__html: this.state.preview}} style={textAreaStyles}></div>
+            <div className="w-2/4 m-4 bg-blue-300" dangerouslySetInnerHTML={{__html: (this.state.markdown)}} style={textAreaStyles}></div>
           </div>
       </div>
     );
