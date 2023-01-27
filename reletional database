@@ -1,3 +1,36 @@
 first module done
 
 second module 10% done
+
+join tables;
+SELECT columns FROM table_1 FULL JOIN table_2 ON table_1.primary_key_column = table_2.foreign_key_column;
+
+many to many join;
+SELECT columns FROM junction_table
+FULL JOIN table_1 ON junction_table.foreign_key_column = table_1.primary_key_column
+FULL JOIN table_2 ON junction_table.foreign_key_column = table_2.primary_key_column;
+
+mario DB done
+
+project start
+
+add multiple columns;
+ALTER TABLE table_name
+ADD COLUMN column_name1 data_type constraint,
+ADD COLUMN column_name2 data_type constraint,
+...
+ADD COLUMN column_namen data_type constraint;
+
+
+add foreign key;
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+update constraint of column;
+ALTER TABLE belt ALTER COLUMN belt_id SET NOT NULL;
+
+add primary key;
+
+
+update datatype of column;
+ALTER TABLE assets ALTER COLUMN name TYPE VARCHAR;
