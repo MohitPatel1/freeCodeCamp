@@ -1,0 +1,78 @@
+* not sure
+=> command for that 
+= meaning
+// example
+# comment
+
+shall script , bash script
+
+bash = bourne-again shell
+bin = binary
+
+find location => which `filename`
+
+list files in folder => ls -l
+
+*shebang = path to bash interpreter
+
+SET variable// == no space
+QUESTION1="What's your name?"
+I=$1
+
+GET variable//
+$QUESTION1
+
+read variable => read `variable`
+
+PRINT variable => echo Hello $NAME.
+
+PRINT indented text => echo -e "\n~~ Questionnaire ~~\n"
+
+give executable permession => chmod +x `filename` 
+
+COMMET => # `comment`
+Multiple comment => :'...
+                      ...'
+
+PASS ARGUMENTS to executable file => ./filename arg1 arg2
+
+ACCESS ARGUMENTS => $*
+
+IF => //
+
+if [[ $1 == arg1 ]]
+then
+  echo true
+fi
+
+insted of == can use -eq , -ne , -gt , -lt , le , -ge
+
+help test = notes
+
+[[ 4 -ge 5 ]] = we can run this in terminal, it will return exit status 1 = it has one error
+
+echo $? = to print exit status of previous command
+
+[[ 4 -ge 5 ]]; echo $?
+
+FOR LOOP//
+
+for (( i = 10; i > 0; i-- ))
+do
+  echo $i
+done
+
+WHILE loop//
+ I=$1
+  while [[ $I -ge 0 ]]
+  do 
+    echo $I
+    (( I-- )) 
+  done
+
+A shell comes with enviornment variables => printenv
+
+echo 15 === echo (( I + 5)) #I=15
+
+(( ... )) will perform a calculation or operation and output nothing. 
+$(( ... )) will replace the calculation with the result of it. 
