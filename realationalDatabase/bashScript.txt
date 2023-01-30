@@ -3,6 +3,7 @@
 = meaning
 // example
 # comment
+--> output
 
 shall script , bash script
 
@@ -36,7 +37,7 @@ Multiple comment => :'...
 
 PASS ARGUMENTS to executable file => ./filename arg1 arg2
 
-ACCESS ARGUMENTS => $*
+ACCESS ARGUMENTS => $* or $@
 
 IF => //
 
@@ -76,3 +77,24 @@ echo 15 === echo (( I + 5)) #I=15
 
 (( ... )) will perform a calculation or operation and output nothing. 
 $(( ... )) will replace the calculation with the result of it. 
+
+Array:
+ARR=("a" "b" "c")
+
+print all elements of array => echo ${ARR[@]}
+
+FUNCTION: 
+GET_FORTUNE() {
+  statments
+}
+
+to call function => GET_FORTUNE #function name 
+
+do until the condition comes true
+
+until [[ CONDITION ]]
+do
+  STATEMENTS
+done
+
+contains check => [[ hello =~ el ]]; echo $? --> 0 
