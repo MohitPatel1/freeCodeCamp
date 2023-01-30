@@ -1,4 +1,42 @@
 query condition:
 WHERE <column> LIKE '<pattern>'
-An underscore (_) in a pattern will return rows that have any character in that spot. 
+'_' in a pattern will return rows that have any character in that spot. 
 % To find names that start with W, you could use W%.
+
+word that has second letter 'e' => LIKE '_e%'
+
+NOT LIKE = that don't contain the pattern
+
+ILIKE = not case sensetive
+
+is null, is not null = checks if value there is null 
+
+view result in order at the end of query:
+ORDER BY <column_1>, <column_2>
+Any matching values in the first ordered column will then be ordered by the next. 
+
+to show certain number of raws => LIMIT `number` 
+
+MATHEMETICAL operation:
+minimum value of column => SELECT MIN(<column>) FROM <table>
+
+min,max,sum,avg
+Math.ceiling() => ceil() 
+Math.floor() => floor() 
+Math.round() => round() 
+
+count entries in column:
+count(column)
+
+count unique values of column
+distinct(column)
+
+group by: same as distinct
+groups same values.
+how many students are with same major id => SELECT COUNT(*) FROM students GROUP BY major_id
+
+show custom column with condition => group by column having condition
+
+
+
+
