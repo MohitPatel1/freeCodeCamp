@@ -1,1 +1,16 @@
 view all files in this folder => \l
+
+open postSql => psql --username==freecodecamp --dbname==dbname
+
+create database => CREATE DATABASE dbname
+
+connect to databse => \c dbname
+
+create table => CREATE TABLE tbname();
+
+display tables => \d 
+
+add column => ALTER TABLE tname ADD COLUMN cname dtype contains 
+// ALTER TABLE students ADD COLUMN student_id SERIAL PRIMARY KEY
+
+decimal datatype => NUMERIC(2,1) == 2 number 1 decimal
