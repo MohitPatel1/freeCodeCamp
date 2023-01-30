@@ -98,3 +98,5 @@ do
 done
 
 contains check => [[ hello =~ el ]]; echo $? --> 0 
+
+print all content of file => cat `filename`

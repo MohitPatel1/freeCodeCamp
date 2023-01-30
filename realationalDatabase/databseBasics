@@ -36,3 +36,5 @@ update datatype of column;
 ALTER TABLE assets ALTER COLUMN name TYPE VARCHAR;
 
 add raw;
+
+

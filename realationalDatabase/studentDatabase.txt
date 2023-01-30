@@ -14,3 +14,19 @@ add column => ALTER TABLE tname ADD COLUMN cname dtype contains
 // ALTER TABLE students ADD COLUMN student_id SERIAL PRIMARY KEY
 
 decimal datatype => NUMERIC(2,1) == 2 number 1 decimal
+
+FOREIGN KEY => ALTER TABLE <table_name> ADD FOREIGN KEY(<column_name>) REFERENCES <referenced_table_name>(<referenced_column_name>);
+
+IFS = Internal Field Seperator
+
+query database from script => PSQL="psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c" # -c flag to run single command and exit
+*MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")
+
+is empty => -z operator
+
+loops all data in csv file, variables are set to values saperated by comma
+
+cat students_test.csv | while IFS="," read FIRST LAST MAJOR GPA
+do
+  echo $FIRST
+done
