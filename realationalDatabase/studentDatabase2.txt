@@ -1,0 +1,4 @@
+query condition:
+WHERE <column> LIKE '<pattern>'
+An underscore (_) in a pattern will return rows that have any character in that spot. 
+% To find names that start with W, you could use W%.
