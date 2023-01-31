@@ -37,6 +37,17 @@ how many students are with same major id => SELECT COUNT(*) FROM students GROUP 
 
 show custom column with condition => group by column having condition
 
+full join:
+SELECT * FROM <table_1> FULL JOIN <table_2> ON <table_1>.<foreign_key_column> = <table_2>.<foreign_key_column>;
+
+left join:
+LEFT JOIN gets all rows from the left table, but only rows from the right table that are linked to from the left one
+
+inner join:
+The INNER JOIN only returned students if they have a major and majors that have a student.
+
+if the foreign key column has the same name:
+SELECT * FROM <table_1> FULL JOIN <table_2> USING(<column>);
 
 
 
