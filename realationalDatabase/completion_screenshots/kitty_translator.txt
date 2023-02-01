@@ -1,0 +1,27 @@
+echo `name`> name.txt => saves name to name.txt
+echo `surname`>> name.txt => appends sur name to name.text
+
+command < file => read input
+
+cat < file => takes input
+
+echo Mohit | ./script.sh 2> stderr.txt == it will not ask for input , it will take Mohit as input, 2> means error, error will go to stderr.txt file
+
+2> will go to error file
+1> will go to output file
+
+wc == word count
+wc filename == count line word bytes
+wc -l filename == line count
+
+wc < filename == word count without filename
+
+we can read in 2 ways, 1) cat 2) <
+
+searches patterns in file =>  grep '<pattern>' <filename> 
+man grep for more info
+
+grep --color -n 'meow[a-z]*' == to give each line a line number
+-o == to write only words found
+
+43% done
