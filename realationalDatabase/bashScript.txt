@@ -100,3 +100,12 @@ done
 contains check => [[ hello =~ el ]]; echo $? --> 0 
 
 print all content of file => cat `filename`
+
+CASE:
+
+case EXPRESSION in
+  PATTERN) STATEMENTS ;;
+  PATTERN) STATEMENTS ;;
+  PATTERN) STATEMENTS ;;
+  *) STATEMENTS ;;
+esac

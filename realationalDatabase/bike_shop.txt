@@ -1,0 +1,5 @@
+ [[ a =~ [0-9] ]]; echo $? => false a does not contain any number
+ [[ a1 =~ [0-9] ]]; echo $? => true a1 does contain a number
+ [[ a1 =~ ^[0-9]$ ]]; echo $? => false a1 does contain a number at start(^) , a1 does not contain a number at end($) == the pattern only allows a single number
+ [[ 1 =~ ^[0-9]$ ]]; echo $? => true 1 does contain a number at start(^) , 1 does contain a number at end($) == the pattern only allows a single number
+ [[ 11 =~ ^[0-9]+$ ]]; echo $? => true for any positive integer

@@ -28,9 +28,10 @@ grep -E --color 'dog[a-z]*|woof[a-z]*' == or operator , -E for extended command
 
 stream editor
 to replace pattern => sed 's/<pattern_to_replace>/<text_to_replace_it_with>/' <filename>
-g flag to replace all words containing pattern
+g flag to replace all words containing pattern , without g only first instance will be replaced
 to replace 2 words with same word => s/meow|meowzer/woof/g
 to replace multiple patterns => sed 's/<pattern_1>/<replacement_1>/; s/<pattern_2>/<replacement_2>/'
+echo "$(echo '   M e ' | sed 's/^ *//g')." => ^ is for indecating spaces in front of the text only, it removes one space, * at the end of pattern indecates to remove all spaces from front 
 
 to find line numbers where pattern was found => grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/' 
 

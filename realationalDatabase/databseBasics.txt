@@ -23,8 +23,7 @@ ADD COLUMN column_namen data_type constraint;
 
 
 add foreign key;
-ALTER TABLE Orders
-ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+ALTER TABLE Orders ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
 
 update constraint of column;
 ALTER TABLE belt ALTER COLUMN belt_id SET NOT NULL;
@@ -36,5 +35,8 @@ update datatype of column;
 ALTER TABLE assets ALTER COLUMN name TYPE VARCHAR;
 
 add raw;
+
+update value in raws:
+UPDATE <table> SET <column> = <value> WHERE <condition>
 
 
