@@ -1,0 +1,5 @@
+nano is a programme that helps you modify files that run in terminal
+
+to open file using nano => nano filename
+to save file => ctr + o 
+to leave nano => ctr + x
