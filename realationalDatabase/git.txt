@@ -1,0 +1,24 @@
+create a new directory and type => git init to make it a git reposatory
+
+to create a new branch and go into it => git checkout -b new_branch
+
+when we do git commit files will move from stagging to git history
+to view git history => git log
+
+to view changes made => git diff
+
+Commit messages often start with fix:(fixed a bug) or feat:(added a feature)
+
+to see branches in repo => git branch
+create a new branch => git branch branch_name
+to merge brances => git merge branch_name
+You can delete a branch => git branch -d branch_name
+when you are working an a branch which is based on main and if you add something on main you have to rebase that to the sub branch => git rebase main
+
+Stash your changes so you can add them to a different branch => git stash
+view stashed files => git stash list
+add stashed files => git stash pop
+view condensed version of stash files => git stash show
+View the full changes of the latest stash with git stash show -p
+You can add the latest stash while keeping it in the list => git stash apply 
+view older stash => git stash show stash@{1}
