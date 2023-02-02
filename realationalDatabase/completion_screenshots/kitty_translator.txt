@@ -20,8 +20,19 @@ we can read in 2 ways, 1) cat 2) <
 
 searches patterns in file =>  grep '<pattern>' <filename> 
 man grep for more info
+grep == global regular expression print
 
 grep --color -n 'meow[a-z]*' == to give each line a line number
+grep -E --color 'dog[a-z]*|woof[a-z]*' == or operator , -E for extended command
 -o == to write only words found
 
-43% done
+stream editor
+to replace pattern => sed 's/<pattern_to_replace>/<text_to_replace_it_with>/' <filename>
+g flag to replace all words containing pattern
+to replace 2 words with same word => s/meow|meowzer/woof/g
+to replace multiple patterns => sed 's/<pattern_1>/<replacement_1>/; s/<pattern_2>/<replacement_2>/'
+
+to find line numbers where pattern was found => grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/' 
+
+diff is a command to view the difference between two files. You can use it like this: diff <file_1> <file_2>
+man diff for more info
