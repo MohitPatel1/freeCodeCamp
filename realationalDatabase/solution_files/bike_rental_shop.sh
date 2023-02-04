@@ -47,7 +47,7 @@ RENT_MENU() {
     if [[ ! $BIKE_ID_TO_RENT =~ ^[0-9]+$ ]]
     then
       # send to main menu
-      MAIN_MENU "That is not a valid bike number."
+      MAIN_MENU "That is not a valid bike number."c
     else
       # get bike availability
       BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT AND available = true")
